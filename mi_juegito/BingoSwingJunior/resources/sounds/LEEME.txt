@@ -1,0 +1,10 @@
+=== CARPETA DE SONIDOS ===
+
+Pon aqui tus archivos de sonido .wav con estos nombres exactos:
+
+    numero.wav  -> suena al extraer cada numero
+    linea.wav   -> suena cuando alguien consigue linea
+    bingo.wav   -> suena cuando alguien gana el bingo
+
+Si no pones estos archivos, el juego funciona igual (sin sonido).
+Formato requerido: WAV (PCM sin comprimir es el mas compatible)

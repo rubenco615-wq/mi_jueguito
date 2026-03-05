@@ -1,0 +1,6 @@
+=== CARPETA RESOURCES ===
+
+Pon aqui tu imagen de inicio:
+    splash.png  (recomendado: 800x500 pixeles)
+
+Para los sonidos ve a la carpeta resources\sounds\
