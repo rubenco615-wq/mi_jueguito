@@ -3,6 +3,10 @@ package com.bingo;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * La cabecera (arriba del todo) donde sale el Número Extraído GIGANTE
+ * y donde están los controles del modo Automático y la leyenda de colores.
+ */
 public class PanelNorte extends JPanel {
     private JLabel labelNumero;
     private JCheckBox chkAutoExtraccion;

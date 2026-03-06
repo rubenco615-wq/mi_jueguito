@@ -6,6 +6,10 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
 
+/**
+ * Ventana inicial del juego que muestra la pantalla de carga (Splash)
+ * y un gran botón para comenzar.
+ */
 public class PantallaInicio extends JFrame {
 
     private Image imagenFondo;

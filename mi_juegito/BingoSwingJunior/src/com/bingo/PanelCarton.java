@@ -3,9 +3,13 @@ package com.bingo;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Este panel es el dibujo de 3x9 casillas que ves en pantalla.
+ * Convierte un Carton.java (que son datos) en cuadraditos de colores.
+ */
 public class PanelCarton extends JPanel {
 
-    private final boolean esMaquina;
+    private final boolean esMaquina; // Sirve para saber si pintarlo de rojo (Máquina) o azul (Tú)
     private JLabel labelTitulo;
     private JButton[] celdas;
 

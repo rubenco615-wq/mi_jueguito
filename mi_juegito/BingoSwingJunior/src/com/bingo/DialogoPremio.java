@@ -3,6 +3,10 @@ package com.bingo;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * La típica ventana bonita (sin bordes del sistema operativo) que
+ * salta para celebrarte cuando cantas Línea o Bingo.
+ */
 public class DialogoPremio extends JDialog {
 
     public DialogoPremio(Frame p, String title, String msg, Color bg) {

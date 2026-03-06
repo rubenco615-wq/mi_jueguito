@@ -1,15 +1,22 @@
 package com.bingo;
 
-// Interfaz que deben implementar todos los participantes del bingo
-// Tanto el jugador humano como la máquina deben implementarla
+/**
+ * Molde (Interfaz) que deben seguir todos los que jueguen al bingo.
+ * Garantiza que tanto tú (humano) como la máquina tengáis los mismos métodos
+ * básicos.
+ */
 public interface Participante {
 
-    // Marca un número en el cartón del participante
+    /**
+     * Tacha el número en el cartón si lo tienes.
+     * 
+     * @param numero El número que se ha cantado y debe ser marcado.
+     */
     void marcarNumero(int numero);
 
-    // Devuelve el cartón del participante
+    /** Devuelve el cartón que estás usando */
     Carton getCarton();
 
-    // Devuelve el nombre del participante
+    /** Devuelve tu nombre o "Máquina" */
     String getNombre();
 }

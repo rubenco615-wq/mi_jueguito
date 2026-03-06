@@ -5,6 +5,10 @@ import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+/**
+ * Una ventanita personalizada que te frena antes de empezar
+ * para pedirte tu nombre.
+ */
 public class DialogoNombre extends JDialog {
     private String nombre = "Jugador";
     private JTextField txtNombre;

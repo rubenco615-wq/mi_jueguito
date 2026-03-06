@@ -3,6 +3,10 @@ package com.bingo;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * La barrita inferior de la ventana que contiene los 3 botones principales:
+ * Iniciar Partida, Extraer Número y Finalizar.
+ */
 public class PanelBotones extends JPanel {
     private JButton botonIniciar, botonExtraer, botonFinalizar;
 

@@ -3,6 +3,10 @@ package com.bingo;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Una "caja de herramientas" con métodos directos para sacar
+ * ventanitas de aviso en pantalla rápido y sin escribir mucho código.
+ */
 public class DialogosJuego {
 
     private DialogosJuego() {

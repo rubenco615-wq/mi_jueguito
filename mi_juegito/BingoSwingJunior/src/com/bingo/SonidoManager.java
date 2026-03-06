@@ -4,6 +4,11 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import java.io.File;
 
+/**
+ * El encargado (Manager) de cargar ruidos (.wav) desde la carpeta resources
+ * y hacerlos sonar. Maneja la música de fondo (BGM) y los efectos de sonido
+ * (SFX).
+ */
 public class SonidoManager {
     private static final String DIR = "resources/sounds/";
     private static Clip musicaFondo;

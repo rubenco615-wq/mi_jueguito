@@ -3,6 +3,10 @@ package com.bingo;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * El recuadro negro de la derecha que hace de "historial".
+ * Va apuntando todo lo que pasa en la partida.
+ */
 public class PanelLog extends JPanel {
     private JTextArea areaLog;
 
