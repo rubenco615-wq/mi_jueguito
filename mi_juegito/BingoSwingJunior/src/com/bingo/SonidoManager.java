@@ -1,51 +1,51 @@
 package com.bingo;
 
-import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import java.io.File;
 
 public class SonidoManager {
+    private static final String DIR = "resources/sounds/";
+    private static Clip musicaFondo;
 
-    // Ruta base donde están los sonidos
-    private static final String CARPETA_SONIDOS = "resources/sounds/";
-
-    // Reproduce un archivo .wav dado su nombre
-    public static void reproducir(String nombreArchivo) {
+    public static void reproducirBGM(String file) {
+        detenerBGM(); // Para la anterior si la hay
         try {
-            // Buscamos el archivo en la carpeta de sonidos
-            File archivo = new File(CARPETA_SONIDOS + nombreArchivo);
-
-            if (!archivo.exists()) {
-                // Si no existe el archivo, no pasa nada (el juego sigue)
-                System.out.println("Aviso: no se encontró el sonido " + nombreArchivo);
+            File f = new File(DIR + file);
+            if (!f.exists())
                 return;
-            }
-
-            // Cargamos el audio y lo reproducimos
-            AudioInputStream audioStream = AudioSystem.getAudioInputStream(archivo);
-            Clip clip = AudioSystem.getClip();
-            clip.open(audioStream);
-            clip.start(); // reproducir sin bloquear el hilo
-
-        } catch (Exception e) {
-            // Si hay cualquier error con el sonido, no interrumpimos el juego
-            System.out.println("Aviso: error al reproducir " + nombreArchivo + " - " + e.getMessage());
+            musicaFondo = AudioSystem.getClip();
+            musicaFondo.open(AudioSystem.getAudioInputStream(f));
+            musicaFondo.loop(Clip.LOOP_CONTINUOUSLY);
+        } catch (Exception ignored) {
         }
     }
 
-    // Reproduce el sonido al extraer un número
-    public static void reproducirNumero() {
-        reproducir("numero.wav");
+    public static void detenerBGM() {
+        if (musicaFondo != null && musicaFondo.isRunning()) {
+            musicaFondo.stop();
+            musicaFondo.close();
+        }
     }
 
-    // Reproduce el sonido al conseguir línea
+    private static void reproducirSFX(String file) {
+        try {
+            File f = new File(DIR + file);
+            if (!f.exists())
+                return;
+            Clip clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(f));
+            clip.start();
+        } catch (Exception ignored) {
+        }
+    }
+
     public static void reproducirLinea() {
-        reproducir("linea.wav");
+        reproducirSFX("linea.wav");
     }
 
-    // Reproduce el sonido al conseguir bingo
     public static void reproducirBingo() {
-        reproducir("bingo.wav");
+        detenerBGM();
+        reproducirSFX("bingo.wav");
     }
 }

@@ -3,12 +3,7 @@ package com.bingo;
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Panel lateral derecho que muestra el historial
- * de eventos de la partida (números sacados, línea, bingo…).
- */
 public class PanelLog extends JPanel {
-
     private JTextArea areaLog;
 
     public PanelLog() {
@@ -27,21 +22,14 @@ public class PanelLog extends JPanel {
         areaLog.setFont(new Font("Monospaced", Font.PLAIN, 11));
         areaLog.setBackground(new Color(18, 18, 40));
         areaLog.setForeground(new Color(160, 255, 160));
-        areaLog.setMargin(new Insets(5, 5, 5, 5));
-
-        JScrollPane scrollLog = new JScrollPane(areaLog);
-        add(scrollLog, BorderLayout.CENTER);
+        add(new JScrollPane(areaLog), BorderLayout.CENTER);
     }
 
-    // --- Métodos públicos ---
-
-    /** Añade una línea al log y hace scroll hasta el final. */
-    public void escribirLog(String mensaje) {
-        areaLog.append(mensaje + "\n");
+    public void escribirLog(String msj) {
+        areaLog.append(msj + "\n");
         areaLog.setCaretPosition(areaLog.getDocument().getLength());
     }
 
-    /** Borra todo el contenido del log. */
     public void limpiarLog() {
         areaLog.setText("");
     }

@@ -1,16 +1,14 @@
 package com.bingo;
 
 public class Jugador implements Participante {
-
-    String nombre;
-    Carton carton;
+    private String nombre;
+    private Carton carton;
 
     public Jugador(String nombre) {
         this.nombre = nombre;
-        this.carton = new Carton(); // Se crea un cartón nuevo con números aleatorios
+        this.carton = new Carton();
     }
 
-    // Marca el número en el cartón del jugador
     @Override
     public void marcarNumero(int numero) {
         carton.marcarNumero(numero);
